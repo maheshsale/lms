@@ -4,6 +4,8 @@ import { AppContext } from "../../context/AppContext";
 import Loading from "../../components/student/Loading";
 import { assets } from "../../assets/assets";
 import humanizeDuration from "humanize-duration";
+import Footer from "../../components/student/Footer";
+
 
 const CourseDetails = () => {
   const { id } = useParams();
@@ -215,10 +217,22 @@ const CourseDetails = () => {
 
               {/* Enroll now button */}
               <button className='md:mt-6 mt-4 w-full py-3 rounded bg-blue-600 text-white font-medium'>{isAlreadyEnrolled ? 'Already Enrolled' : 'Enroll Now'}</button>
+
+              {/* What's in the course section */}
+              <div className='pt-6'>
+                <p className='md:text-xl text-lg font-medium text-gray-800'>What's in the course?</p>
+                <ul className='ml-4 pt-2 text-sm md:text-default list-disc text-gray-500'>
+                  <li>Lifetime access with free updates.</li>
+                  <li>Step-by-step, hands-on project guidance.</li>
+                  <li>Downloadable resources and source code.</li>
+                  <li>Quizzes to test your knowledge.</li>
+                  <li>Certificate of completion.</li>
+                  <li>Quizzes to test your knowledge.</li>
+                </ul>
+              </div>
         </div>
-      
-      
       </div>
+      <Footer />
     </>
   ) : (
     <Loading />
